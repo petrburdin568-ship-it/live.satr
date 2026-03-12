@@ -132,33 +132,42 @@ function renderOptions(optionsEl, options) {
 }
 
 async function loadQuiz(mode) {
-  const jsSrc = `./data/${mode}/questions.js`;
-  try {
-    return await new Promise((resolve, reject) => {
+  const jsCandidates = [`./questions_${mode}.js`, `./data/${mode}/questions.js`];
+
+  const loadScriptQuiz = (src) =>
+    new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src = jsSrc;
+      script.src = src;
       script.async = true;
 
       script.onload = () => {
         const quiz = window.SVOYA_IGRA_QUIZ;
         delete window.SVOYA_IGRA_QUIZ;
         if (!quiz) {
-          reject(new Error(`В ${jsSrc} не найдено window.SVOYA_IGRA_QUIZ`));
+          reject(new Error(`В ${src} не найдено window.SVOYA_IGRA_QUIZ`));
           return;
         }
         resolve(quiz);
       };
-      script.onerror = () => reject(new Error(`Не удалось загрузить ${jsSrc}`));
+      script.onerror = () => reject(new Error(`Не удалось загрузить ${src}`));
 
       document.head.appendChild(script);
     });
-  } catch {
-    // Fallback for hosted environments (GitHub Pages) where JSON is present but JS isn't.
-    const jsonSrc = `./data/${mode}/questions.json`;
-    const res = await fetch(jsonSrc, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Не удалось загрузить ${jsonSrc}`);
-    return res.json();
+
+  for (const src of jsCandidates) {
+    try {
+      return await loadScriptQuiz(src);
+    } catch {
+      // try next
+    }
   }
+
+  const jsonCandidates = [`./questions_${mode}.json`, `./data/${mode}/questions.json`];
+  for (const src of jsonCandidates) {
+    const res = await fetch(src, { cache: "no-store" });
+    if (res.ok) return res.json();
+  }
+  throw new Error(`Нет файлов вопросов для ${mode}`);
 }
 
 function fmtScore(n) {
@@ -196,7 +205,7 @@ async function main() {
     boardEl.innerHTML =
       `<div class="col__head">` +
       `Нет данных для режима: ${mode}.<br/>` +
-      `Нужен файл <span style="font-family:var(--font2)">site/data/${mode}/questions.js</span> (или <span style="font-family:var(--font2)">questions.json</span>).` +
+      `Нужен файл <span style="font-family:var(--font2)">questions_${mode}.js</span> (или <span style="font-family:var(--font2)">questions_${mode}.json</span>).` +
       `</div>`;
     return;
   }
