@@ -1,320 +1,122 @@
-﻿window.SVOYA_IGRA_QUIZ = {
-    "title":  "Герои в форме",
-    "categories":  [
-                       {
-                           "name":  "Штабная смекалка",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Защитное сооружение, укрытие от огня противника",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Окоп"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Как расшифровывается КПП?",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Контрольно-пропускной пункт"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "Водитель поезда",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Машинист"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "Военный строй в одну линию",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Шеренга"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "Один из государственных символов, не гимн и не флаг",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Герб"
-                                             }
-                                         ]
-                       },
-                       {
-                           "name":  "Тактический круг",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Линия развертывания вооруженных сил и их соприкосновенияс противником",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Фронт"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Как расшифровывается ВКС?",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Воздушно-космические силы"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "Больница для военных",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Госпиталь"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "Фигура высшего пилотажа и емкость для хранения",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Бочка"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "Воспитанник кадетского корпуса",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Кадет"
-                                             }
-                                         ]
-                       },
-                       {
-                           "name":  "Командирский разбор",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Клинковое оружие богатыря",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Меч"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Герой русских былин, совершающий воинские подвиги",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Богатырь"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "Как расшифровывается ПВО",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Противовоздушная оборона"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "Колющее или метательное оружие на древке",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Копье"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "Оружие Робина Гуда",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Лук"
-                                             }
-                                         ]
-                       },
-                       {
-                           "name":  "Полевая эрудиция",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Как расшифровывается ВМФ",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Военно-морской флот"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Механизированный лук",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Арбалет"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "……… крепка, и танки наши быстры",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Броня"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "Древнее государство, знаменитое своим воспитанием",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Спарта"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "Как расшифровывается ССО",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Силы специальных операций"
-                                             }
-                                         ]
-                       },
-                       {
-                           "name":  "Сигнальный вызов",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Условная азбука для секретного письма",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Шифр"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Изображение местности",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Карта"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "Птица - символ мира",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Голубь"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "С чем десантники прыгают с самолета",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Парашютом"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "Сигнал при помощи флажков",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Семафор"
-                                             }
-                                         ]
-                       },
-                       {
-                           "name":  "Что ты знаешь о нашей армии?",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Где находится Генеральный штаб ВС РФ",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "в Москве"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Сколько звездочек на погоне у старшего лейтенанта",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Три"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "Самый тяжелый российский танк",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Т-14"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "Сколько длится срочная служба в ВС РФ",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "1 год"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "День защитников Отечества празднуется",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "23 февраля"
-                                             }
-                                         ]
-                       },
-                       {
-                           "name":  "Что ты знаешь о нашей армии? (2)",
-                           "questions":  [
-                                             {
-                                                 "value":  100,
-                                                 "question":  "Девиз Воздушно-десантных войск",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "«Никто кроме нас»"
-                                             },
-                                             {
-                                                 "value":  200,
-                                                 "question":  "Какая птица изображена на знамени ВС РФ",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Орел"
-                                             },
-                                             {
-                                                 "value":  300,
-                                                 "question":  "Военнослужащий, стоящий на посту",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Часовой"
-                                             },
-                                             {
-                                                 "value":  400,
-                                                 "question":  "Где живут военнослужащие в части",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "В казарме"
-                                             },
-                                             {
-                                                 "value":  500,
-                                                 "question":  "Как называется торжественный проход войск строем",
-                                                 "options":  [
-
-                                                             ],
-                                                 "answer":  "Парад"
-                                             }
-                                         ]
-                       }
-                   ]
+window.SVOYA_IGRA_QUIZ = {
+  title: "История Отечества",
+  categories: [
+    {
+      name: "Персонажи",
+      questions: [
+        {
+          value: 100,
+          question: "Как зовут правителя, руководившего СССР в середине 20 века?",
+          options: [
+            { label: "А", text: "Сталин И.В.", image: "./data/mode1/media/image1.jpeg" },
+            { label: "Б", text: "Александр II", image: "./data/mode1/media/image3.jpeg" },
+            { label: "В", text: "Рюрик" }
+          ],
+          answer: "Сталин И.В."
+        },
+        {
+          value: 200,
+          question: "Кто «прорубил окно в Европу»?",
+          options: [
+            { label: "А", text: "Иван Калита" },
+            { label: "Б", text: "Петр I" },
+            { label: "В", text: "Николай I" }
+          ],
+          answer: "Петр I"
+        },
+        {
+          value: 300,
+          question: "На какой картинке изображен Иван Грозный?",
+          options: [
+            { label: "А", text: "Вариант А", image: "./data/mode1/media/image1.jpeg" },
+            { label: "Б", text: "Вариант Б", image: "./data/mode1/media/image3.jpeg" },
+            { label: "В", text: "Вариант В", image: "./data/mode1/media/image4.jpeg" }
+          ],
+          answer: "Вариант В (Иван Грозный)."
+        }
+      ]
+    },
+    {
+      name: "Термины",
+      questions: [
+        {
+          value: 100,
+          question: "Как называется войско князя?",
+          options: [
+            { label: "А", text: "Дружина" },
+            { label: "Б", text: "Печенеги" },
+            { label: "В", text: "Флот" }
+          ],
+          answer: "Дружина."
+        },
+        {
+          value: 200,
+          question: "При помощи чего в средние века носили ведра с водой?",
+          options: [
+            { label: "А", text: "Лапти" },
+            { label: "Б", text: "Коромысло" },
+            { label: "В", text: "Веретено" }
+          ],
+          answer: "Коромысло."
+        },
+        {
+          value: 300,
+          question: "Как называется основное стрелковое оружие Древней Руси?",
+          options: [
+            { label: "А", text: "Щит" },
+            { label: "Б", text: "Меч" },
+            { label: "В", text: "Лук" }
+          ],
+          answer: "Лук."
+        }
+      ]
+    },
+    {
+      name: "Символы",
+      questions: [
+        {
+          value: 100,
+          question: "С каким флагом шли в бой советские солдаты во время Великой Отечественной войны?",
+          options: [
+            { label: "А", text: "Вариант А", image: "./data/mode1/media/image5.jpeg" },
+            { label: "Б", text: "Вариант Б", image: "./data/mode1/media/image6.jpeg" },
+            { label: "В", text: "Вариант В", image: "./data/mode1/media/image7.jpeg" }
+          ],
+          answer: "Вариант А (флаг СССР)."
+        },
+        {
+          value: 200,
+          question: "Какой из вензелей относится к последнему российскому императору Николаю II?",
+          options: [
+            { label: "А", text: "Вариант А", image: "./data/mode1/media/image9.png" },
+            { label: "Б", text: "Вариант Б", image: "./data/mode1/media/image8.jpeg" },
+            { label: "В", text: "Вариант В", image: "./data/mode1/media/image10.jpeg" }
+          ],
+          answer: "Вариант Б."
+        },
+        {
+          value: 300,
+          question: "Выберите символы власти царя.",
+          options: [
+            { label: "А", text: "Кольцо", image: "./data/mode1/media/image11.jpeg" },
+            { label: "Б", text: "Держава", image: "./data/mode1/media/image12.jpeg" },
+            { label: "В", text: "Скипетр", image: "./data/mode1/media/image13.jpeg" }
+          ],
+          answer: "Держава и скипетр."
+        }
+      ]
+    },
+    {
+      name: "Ребус",
+      questions: [
+        {
+          value: 100,
+          question: "Название советской боевой машины Великой Отечественной войны с ракетной установкой.",
+          options: [{ label: "", text: "Ребус", image: "./data/mode1/media/image14.png" }],
+          answer: "Катюша."
+        }
+      ]
+    }
+  ]
 };
+
