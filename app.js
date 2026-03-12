@@ -132,25 +132,33 @@ function renderOptions(optionsEl, options) {
 }
 
 async function loadQuiz(mode) {
-  return new Promise((resolve, reject) => {
-    const src = `./data/${mode}/questions.js`;
-    const script = document.createElement("script");
-    script.src = src;
-    script.async = true;
+  const jsSrc = `./data/${mode}/questions.js`;
+  try {
+    return await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = jsSrc;
+      script.async = true;
 
-    script.onload = () => {
-      const quiz = window.SVOYA_IGRA_QUIZ;
-      delete window.SVOYA_IGRA_QUIZ;
-      if (!quiz) {
-        reject(new Error(`В ${src} не найдено window.SVOYA_IGRA_QUIZ`));
-        return;
-      }
-      resolve(quiz);
-    };
-    script.onerror = () => reject(new Error(`Не удалось загрузить ${src}`));
+      script.onload = () => {
+        const quiz = window.SVOYA_IGRA_QUIZ;
+        delete window.SVOYA_IGRA_QUIZ;
+        if (!quiz) {
+          reject(new Error(`В ${jsSrc} не найдено window.SVOYA_IGRA_QUIZ`));
+          return;
+        }
+        resolve(quiz);
+      };
+      script.onerror = () => reject(new Error(`Не удалось загрузить ${jsSrc}`));
 
-    document.head.appendChild(script);
-  });
+      document.head.appendChild(script);
+    });
+  } catch {
+    // Fallback for hosted environments (GitHub Pages) where JSON is present but JS isn't.
+    const jsonSrc = `./data/${mode}/questions.json`;
+    const res = await fetch(jsonSrc, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Не удалось загрузить ${jsonSrc}`);
+    return res.json();
+  }
 }
 
 function fmtScore(n) {
@@ -188,7 +196,7 @@ async function main() {
     boardEl.innerHTML =
       `<div class="col__head">` +
       `Нет данных для режима: ${mode}.<br/>` +
-      `Нужен файл <span style="font-family:var(--font2)">site/data/${mode}/questions.json</span>.` +
+      `Нужен файл <span style="font-family:var(--font2)">site/data/${mode}/questions.js</span> (или <span style="font-family:var(--font2)">questions.json</span>).` +
       `</div>`;
     return;
   }
